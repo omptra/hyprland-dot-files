@@ -1,0 +1,196 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Cascadia Code", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+/* Island/Pill containers */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(49, 50, 68, 0.7);
+    border-radius: 20px;
+    padding: 2px 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Launcher Specific Styling - Part of the left pill */
+#custom-launcher {
+    font-size: 18px;
+    color: #89b4fa;
+    padding: 0 15px;
+    margin-right: 5px;
+}
+
+/* WORKSPACES STYLING */
+#workspaces {
+    background: transparent;
+    padding-left: 2px;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    color: #585b70;
+    min-width: 25px;
+    transition: all 0.4s cubic-bezier(.55, -0.04, .3, 1.44);
+}
+
+#workspaces button:hover {
+    color: #89b4fa;
+}
+
+#workspaces button.occupied {
+    color: #cdd6f4;
+}
+
+#workspaces button.active {
+    color: #11111b;
+    background: linear-gradient(45deg, #89b4fa, #b4befe);
+    border-radius: 20px;
+    min-width: 38px;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    background: #f38ba8;
+    border-radius: 20px;
+}
+
+/* CLOCK */
+#clock {
+    padding: 0 10px;
+    color: #cdd6f4;
+}
+
+/* SYSTEM MODULES */
+#network,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#battery,
+#tray {
+    padding: 0 6px;
+    margin: 0 2px;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+/* WiFi Expansion on Hover */
+#network .ssid-text {
+    font-size: 0px;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+#network:hover .ssid-text {
+    font-size: 13px;
+    color: #89b4fa;
+}
+
+
+
+#bluetooth {
+    color: #89b4fa;
+}
+
+#pulseaudio {
+    color: #f9e2af;
+}
+
+#backlight {
+    color: #fab387;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#bluetooth.disabled {
+    color: #585b70;
+}
+
+
+#battery.charging {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical:not(.charging) {
+    color: #f38ba8;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f38ba8;
+        color: #11111b;
+    }
+}
+
+/* MEDIA & DRAWER STYLING */
+#mpris {
+    padding: 0 15px;
+    margin-left: 5px;
+    background: rgba(137, 180, 250, 0.1);
+    border-radius: 15px;
+}
+
+#group-extra {
+    margin-left: 10px;
+    border-right: 1px solid rgba(49, 50, 68, 0.7);
+    padding-right: 5px;
+}
+
+#custom-drawer-toggle {
+    color: #89b4fa;
+    padding: 0 8px;
+}
+
+#cpu,
+#memory,
+#temperature,
+#disk,
+#custom-notification {
+    padding: 0 8px;
+    font-size: 11px;
+    /* Smaller font for secondary metrics */
+}
+
+#cpu {
+    color: #f9e2af;
+}
+
+#memory {
+    color: #a6e3a1;
+}
+
+#temperature {
+    color: #fab387;
+}
+
+#disk {
+    color: #f5c2e7;
+}
+
+#custom-notification {
+    color: #89dceb;
+}
+
+#tray {
+    padding-left: 10px;
+}

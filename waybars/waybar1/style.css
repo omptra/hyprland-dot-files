@@ -1,0 +1,170 @@
+/* ============================================================================
+   WAYBAR STYLE - OMARCHY UNIFIED EDITION
+   Premium · Glassmorphic · Dynamic · Omarchy Palette
+   ============================================================================ */
+
+/* Hardcoded Static Palette (GitHub Ready) */
+/* accent: #aaacac; background: #040303; foreground: #ffffff; critical: #F82A2A; warning: #fef348; */
+
+/* ---------------------------------------------------------------------------
+   GLOBAL & RESET
+--------------------------------------------------------------------------- */
+
+* {
+	font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+	font-size: 13px;
+	font-weight: bold;
+	border: none;
+	min-height: 0;
+}
+
+/* The Main Bar - Unified Glassmorphic Strip */
+window#waybar {
+	background: rgba(4, 3, 3, 0.85); /* Solid glass base */
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+   MODULE GROUPS (Resetting Island Look)
+--------------------------------------------------------------------------- */
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0 4px;
+	box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
+   WORKSPACES (Sharp Underline Design)
+--------------------------------------------------------------------------- */
+
+#workspaces {
+	background: transparent;
+	margin: 0 4px;
+}
+
+#workspaces button {
+	padding: 0 8px;
+	margin: 0 2px;
+	color: rgba(255, 255, 255, 0.35); /* Muted but visible for occupied */
+	border-bottom: 2px solid transparent;
+}
+
+#workspaces button.empty {
+	color: rgba(255, 255, 255, 0.1); /* Very dull for empty */
+}
+
+#workspaces button.visible {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+/* Active workspace - Sharp Underline + Glow */
+#workspaces button.active {
+	color: #ffffff;
+	border-bottom: 2px solid #aaacac; /* Theme accent hex */
+	text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#workspaces button:hover {
+	background: rgba(255, 255, 255, 0.12);
+	border-radius: 6px;
+	color: white;
+}
+
+/* ---------------------------------------------------------------------------
+   DRAWER & MODULES
+--------------------------------------------------------------------------- */
+
+/* Individual module spacing and icons */
+#custom-omarchy,
+#clock,
+#idle_inhibitor,
+#custom-weather,
+#custom-update,
+#custom-notification,
+#mpris,
+#backlight,
+#pulseaudio,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#battery,
+#custom-drawer-toggle {
+	padding: 0 8px;
+	margin: 1px 2px;
+	color: rgba(255, 255, 255, 0.9);
+	border-radius: 6px;
+}
+
+/* Consistent Hover Highlighting for EVERY module */
+#custom-omarchy:hover,
+#clock:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover,
+#custom-update:hover,
+#custom-notification:hover,
+#mpris:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#disk:hover,
+#battery:hover,
+#custom-drawer-toggle:hover {
+	background: rgba(255, 255, 255, 0.15);
+	color: #ffffff;
+}
+
+/* Drawer Toggle Icon */
+#custom-drawer-toggle {
+	color: #aaacac;
+	font-size: 13px;
+}
+
+#group-extra {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	margin-right: 4px;
+	padding: 0 2px;
+}
+
+/* ---------------------------------------------------------------------------
+   DYNAMIC COLORING
+--------------------------------------------------------------------------- */
+
+#cpu.warning, #memory.warning, #temperature.warning { color: #fef348; }
+#cpu.critical, #memory.critical, #temperature.critical { color: #F82A2A; animation: blink-crit 0.8s infinite alternate; }
+
+@keyframes blink-crit { to { opacity: 0.5; } }
+
+/* ---------------------------------------------------------------------------
+   HOVER EFFECTS
+--------------------------------------------------------------------------- */
+
+#pulseaudio:hover, #network:hover, #backlight:hover, #bluetooth:hover, #battery:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------------------------------------------------------------------------
+   TOOLTIP
+--------------------------------------------------------------------------- */
+
+tooltip {
+	background: rgba(12, 12, 12, 0.95);
+	border: 1px solid #aaacac;
+	border-radius: 10px;
+}
+
+tooltip label { color: white; padding: 6px; }
